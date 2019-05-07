@@ -1,0 +1,62 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "etag": {
+                    "description": "ETag of the resource.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Task list identifier.",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "tasks#taskList",
+                    "description": "Type of the resource. This is always \"tasks#taskList\".",
+                    "type": "string"
+                },
+                "selfLink": {
+                    "description": "URL pointing to this task list. Used to retrieve, update, or delete this task list.",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Title of the task list.",
+                    "type": "string"
+                },
+                "updated": {
+                    "description": "Last modification time of the task list (as a RFC 3339 timestamp).",
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

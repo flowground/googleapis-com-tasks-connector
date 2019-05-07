@@ -1,0 +1,288 @@
+{
+    "title": "Tasks",
+    "description": "Manages your tasks and task lists.",
+    "docsUrl": "https://developers.google.com/google-apps/tasks/firstapp",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/tasks/v1/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/tasks/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "tasks_tasks_clear": {
+            "main": "./lib/actions/tasks_tasks_clear.js",
+            "title": "Clears all completed tasks from the specified task list. The affected tasks will be marked as 'hidden' and no longer be returned by default when retrieving all tasks for a task list.",
+            "description": "Clears all completed tasks from the specified task list. The affected tasks will be marked as 'hidden' and no longer be returned by default when retrieving all tasks for a task list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasks_clear.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tasks_tasks_list": {
+            "main": "./lib/actions/tasks_tasks_list.js",
+            "title": "Returns all tasks in the specified task list.",
+            "description": "Returns all tasks in the specified task list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasks_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tasks_tasks_insert": {
+            "main": "./lib/actions/tasks_tasks_insert.js",
+            "title": "Creates a new task on the specified task list.",
+            "description": "Creates a new task on the specified task list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasks_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tasks_tasks_delete": {
+            "main": "./lib/actions/tasks_tasks_delete.js",
+            "title": "Deletes the specified task from the task list.",
+            "description": "Deletes the specified task from the task list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasks_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tasks_tasks_get": {
+            "main": "./lib/actions/tasks_tasks_get.js",
+            "title": "Returns the specified task.",
+            "description": "Returns the specified task.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasks_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tasks_tasks_patch": {
+            "main": "./lib/actions/tasks_tasks_patch.js",
+            "title": "Updates the specified task. This method supports patch semantics.",
+            "description": "Updates the specified task. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasks_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tasks_tasks_update": {
+            "main": "./lib/actions/tasks_tasks_update.js",
+            "title": "Updates the specified task.",
+            "description": "Updates the specified task.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasks_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tasks_tasks_move": {
+            "main": "./lib/actions/tasks_tasks_move.js",
+            "title": "Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks.",
+            "description": "Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasks_move.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tasks_tasklists_list": {
+            "main": "./lib/actions/tasks_tasklists_list.js",
+            "title": "Returns all the authenticated user's task lists.",
+            "description": "Returns all the authenticated user's task lists.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasklists_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tasks_tasklists_insert": {
+            "main": "./lib/actions/tasks_tasklists_insert.js",
+            "title": "Creates a new task list and adds it to the authenticated user's task lists.",
+            "description": "Creates a new task list and adds it to the authenticated user's task lists.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasklists_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tasks_tasklists_delete": {
+            "main": "./lib/actions/tasks_tasklists_delete.js",
+            "title": "Deletes the authenticated user's specified task list.",
+            "description": "Deletes the authenticated user's specified task list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasklists_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tasks_tasklists_get": {
+            "main": "./lib/actions/tasks_tasklists_get.js",
+            "title": "Returns the authenticated user's specified task list.",
+            "description": "Returns the authenticated user's specified task list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasklists_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tasks_tasklists_patch": {
+            "main": "./lib/actions/tasks_tasklists_patch.js",
+            "title": "Updates the authenticated user's specified task list. This method supports patch semantics.",
+            "description": "Updates the authenticated user's specified task list. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasklists_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tasks_tasklists_update": {
+            "main": "./lib/actions/tasks_tasklists_update.js",
+            "title": "Updates the authenticated user's specified task list.",
+            "description": "Updates the authenticated user's specified task list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tasks_tasklists_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

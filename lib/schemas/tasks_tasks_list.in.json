@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "completedMax": {
+            "type": "string"
+        },
+        "completedMin": {
+            "type": "string"
+        },
+        "dueMax": {
+            "type": "string"
+        },
+        "dueMin": {
+            "type": "string"
+        },
+        "maxResults": {
+            "type": "string"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "showCompleted": {
+            "type": "boolean"
+        },
+        "showDeleted": {
+            "type": "boolean"
+        },
+        "showHidden": {
+            "type": "boolean"
+        },
+        "tasklist": {
+            "required": true,
+            "type": "string"
+        },
+        "updatedMin": {
+            "type": "string"
+        }
+    }
+}

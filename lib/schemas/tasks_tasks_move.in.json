@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "parent": {
+            "type": "string"
+        },
+        "previous": {
+            "type": "string"
+        },
+        "task": {
+            "required": true,
+            "type": "string"
+        },
+        "tasklist": {
+            "required": true,
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}
